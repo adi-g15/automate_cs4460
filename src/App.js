@@ -3,8 +3,8 @@ import Member from "./member"
 import create_pdf from "./func"
 
 export default function App() {
-    const [topicName, setTopicName] = useState("");
-    const [groupNumber, setgroupNumber] = useState(13);
+    const [topicName, setTopicName] = useState(localStorage.getItem('cs4460topic') ?? "");
+    const [groupNumber, setgroupNumber] = useState(localStorage.getItem('cs4460gn') ?? '13');
     const [members, setMembers] = useState(localStorage.getItem('cs4460members') !== null ? JSON.parse(localStorage.getItem('cs4460members')): [['19060', '', ''],['19060', '', ''],['19060', '', ''],['19060', '', ''],['19060', '', ''],['19060', '', ''],['19060', '', ''],['19060', '', '']]);
 
     function addNewMember() {
@@ -15,6 +15,8 @@ export default function App() {
         const pdf = create_pdf(groupNumber, topicName, members)
         pdf.save(`group_${groupNumber}.pdf`);
         localStorage.setItem('cs4460members', JSON.stringify(members))
+        localStorage.setItem('cs4460topic', topicName)
+        localStorage.setItem('cs4460gn', groupNumber)
     }
 
     return (
