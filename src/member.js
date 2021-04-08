@@ -8,19 +8,16 @@ function Member({member, setMembers}) {
 	function modifyRoll(value) {
         member[0] = value;
 		setRoll(value);
-        setMembers(members => [...members]);
 	}
 
 	function modifyName(value) {
         member[1] = value;
 		setName(value);
-        setMembers(members => [...members]);
 	}
 
 	function modifyMobile(value) {
         member[2] = value;
 		setMobile(value);
-        setMembers(members => [...members]);
 	}
 
 	return (
