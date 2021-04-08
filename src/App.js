@@ -5,10 +5,10 @@ import create_pdf from "./func"
 export default function App() {
     const [topicName, setTopicName] = useState("");
     const [groupNumber, setgroupNumber] = useState(13);
-    const [members, setMembers] = useState([['', '', ''],['', '', ''],['', '', ''],['', '', ''],['', '', ''],['', '', ''],['', '', ''],['', '', '']]);
+    const [members, setMembers] = useState([['19060', '', ''],['19060', '', ''],['19060', '', ''],['19060', '', ''],['19060', '', ''],['19060', '', ''],['19060', '', ''],['19060', '', '']]);
 
     function addNewMember() {
-        setMembers(members => [...members, ['', '', '']]);
+        setMembers(members => [...members, ['19060', '', '']]);
     }
 
     function downloadPDF() {
