@@ -1,26 +1,26 @@
 import React, { useState, useEffect } from "react";
 
 function Member({member, setMembers}) {
-	const [roll, setRoll] = useState( 19060 );
-	const [name, setName] = useState( "" );
-	const [mobile, setMobile] = useState( "" );
+	const [roll, setRoll] = useState( member[0] ?? '19060' );
+	const [name, setName] = useState( member[1] ?? "" );
+	const [mobile, setMobile] = useState( member[2] ?? "" );
 
 	function modifyRoll(value) {
         member[0] = value;
-        setMembers(members => [...members]);
 		setRoll(value);
+        setMembers(members => [...members]);
 	}
 
-	function modifyName(name) {
-        member[1] = name;
+	function modifyName(value) {
+        member[1] = value;
+		setName(value);
         setMembers(members => [...members]);
-		setName(name);
 	}
 
 	function modifyMobile(value) {
-        member[2] = name;
-        setMembers(members => [...members]);
+        member[2] = value;
 		setMobile(value);
+        setMembers(members => [...members]);
 	}
 
 	return (
