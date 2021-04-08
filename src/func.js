@@ -68,5 +68,4 @@ function create_pdf(group_no, group_topic, members) {
     return doc;
 }
 
-const pdf = create_pdf(group_no, group_topic, members)
-pdf.save(`group_${group_no}.pdf`);
+module.exports = create_pdf;
