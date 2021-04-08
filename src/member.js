@@ -6,7 +6,7 @@ function Member({member, setMembers}) {
 	const [mobile, setMobile] = useState( "" );
 
 	function modifyRoll(value) {
-        member[0] = name;
+        member[0] = value;
         setMembers(members => [...members]);
 		setRoll(value);
 	}
